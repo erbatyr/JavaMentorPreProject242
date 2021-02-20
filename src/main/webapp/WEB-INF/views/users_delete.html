@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users main site</title>
+</head>
+<body>
+    <a href="#" th:href="@{/logout}">Log Out</a>
+    <form th:action="'/admin/user/'+${user.getId()}+'/delete'" method="post">
+        <p>Are you sure want to delete this User: <span th:text="${user.getUsername()}"/></p>
+        <button th:href="'/admin/user/'+${user.getId()}+'/delete'" type="submit">Delete</button>
+    </form>
+</body>
+</html>
